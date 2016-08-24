@@ -1,66 +1,48 @@
 <?php
-
 require_once 'GSM.php';
 
-class Call{
+class Call {
 	
-	protected   $priceForMinute = 0.50;
-	protected 	$caller;
-	protected 	$receiver;
-	protected 	$duration;
-
+	protected $priceForMinute;
+	protected $caller;
+	protected $receiver;
+	protected $duration;
 	
-	 public function __construct($caller, $receiver, $duration){
-		
-	 	$this->caller = $caller;
-	 	$this->receiver = $receiver;
-	 	$this->duration = $duration;
+	public function __construct($caller, $receiver, $duration) {
+		$this->caller = $caller;
+		$this->receiver = $receiver;
+		$this->duration = $duration;
 	}
 	
-	
-	
-	public function getCaller()
-	{
+	public function getCaller() {
 		return $this->caller;
 	}
 	
-	public function setCaller($caller)
-	{
+	public function setCaller($caller) {
 		$this->caller = $caller;
 	}
 	
-	public function getReceiver()
-	{
+	public function getReceiver() {
 		return $this->receiver;
 	}
 	
-	public function setReceiver($receiver)
-	{
+	public function setReceiver($receiver) {
 		$this->receiver = $receiver;
 	}
 	
-	
-	public function getDuration(){
+	public function getDuration() {
 		return $this->duration;
 	}
 	
-	
-	public function setDuration($duration)
-	{
-		if ($duration <120 && $duration>0){
-			$this->duration=$duration;
-		}
-		else{
-			throw new \Exception('Invalid duration!');
+	public function setDuration($duration) {
+		if ($duration < 120 && $duration > 0) {
+			$this->duration = $duration;
+		} else {
+			throw new \Exception ( 'Invalid duration!' );
 		}
 	}
 	
-	public function getPriceForMinute()
-	{
-		return $this->priceForMinute;
+	public function getPriceForMinute() {
+		return 3;
 	}
-	
-	
-	
-	
 }

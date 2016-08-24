@@ -1,22 +1,22 @@
 <?php
-
 require_once 'autoload.php';
 
+$gsm1 = new GSM ( 'Nokia' );
+$gsm2 = new GSM ( 'Sony' );
 
-$caller = new GSM('Nokia');
-$receiver = new GSM('Sony');
+$gsm1->insertSimCard ( '0888888821' );
+$gsm2->insertSimCard ( '0888888888' );
 
-$caller->setSimMobileNumber(0888888888);
-$receiver->setSimMobileNumber(0887654321);
+$gsm1->call ( $gsm2, 110 );
 
-$caller->sethasSimCard(true);
-$receiver->sethasSimCard(true);
+echo $gsm1->getSumForCall () . PHP_EOL;
 
-//$duration->setDuration(25);
-
-$call1 = new Call($caller, $receiver, 200);
-
-//echo $caller->getSumForCall();
+echo $gsm1->printInfoForTheLastOutgoingCall () . PHP_EOL;
+echo $gsm1->printInfoForTheLastIncomingCall () . PHP_EOL;
 
 
-echo $caller->getSimMobileNumber();
+  
+/* $gsm2->call($gsm1, 23);
+echo $gsm2->printInfoForTheLastOutgoingCall().PHP_EOL;
+echo $gsm2->printInfoForTheLastIncomingCall().PHP_EOL;  */
+

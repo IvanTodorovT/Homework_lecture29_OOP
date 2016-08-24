@@ -1,21 +1,25 @@
 <?php
+
+use Task\Task;
+use Employee\Employee;
 require_once 'autoload.php';
+
+$polivane = new Task("polivane", 3);
 
 $rabotnik = new Employee ( "Ivan" );
 
-$rabotnik->setHoursLeft ( 10 );
+$rabotnik->setCurrentTask($polivane);
+
+$rabotnik->setHoursLeft(8);
 
 $rabotnik->work ();
-//task- polivane, 3 chasa
+
 echo $rabotnik->showReport () . PHP_EOL;
 
 
-/* 
- 	$rabotnik2 = new Employee("Milcho");
-    $rabotnik2->setHoursLeft(2);
 
-$rabotnik2->work();
 
-echo $rabotnik2->showReport();
 
- */
+
+
+

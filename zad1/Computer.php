@@ -71,7 +71,7 @@ class Computer
 	public function getInfo()
 	{
 		// red Toyota Celica speed 30 km/h
-		return sprintf('Made in: %s with price: %s type: %s HDD: %sGB. Free memory is: %sGB and OS: %s. ',
+		return sprintf('Produced through: %s, with price: %s, type-NoteBook: %s, HDD: %sGB. Free memory is: %sGB and OS: %s. ',
 				$this->getYear(),
 				$this->getPrice(),
 				$this->getIsNotebook(),
