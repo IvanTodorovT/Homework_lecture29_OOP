@@ -52,17 +52,7 @@ class Employee {
 	}
 	
 	public function work() {
-		$workerWorkingHours = $this->getHoursLeft ();
-		$taskWorkingHours = $this->getCurrentTask ()->getWorkingHours ();
-		
-		if ($workerWorkingHours > $taskWorkingHours) {
-			$this->getCurrentTask ()->setWorkingHours ( 0 );
-			$this->setHoursLeft ( $workerWorkingHours - $taskWorkingHours );
-		} else if ($taskWorkingHours > $workerWorkingHours) {
-			$this->getCurrentTask ()->setWorkingHours ( $taskWorkingHours - $workerWorkingHours );
-			$this->setHoursLeft ( 0 );
-		}
-		
+	
 		if ($this->getHoursLeft () > $this->getCurrentTask ()->getWorkingHours ()) {
 			$this->setHoursLeft ( $this->getHoursLeft () - $this->getCurrentTask ()->getWorkingHours () );
 			$this->getCurrentTask ()->setWorkingHours ( 0 );
